@@ -1,6 +1,6 @@
 # Phase 1 Project: JS, CSS, HTML
 
-## Project Title
+## Recipe Search App
 
 ### Built Using
 
@@ -20,13 +20,15 @@ CSS
 
 ### Overall Functionality
 
-- bulleted uses
+- Allows users to search for a recipe using an item they would like to use as a main ingredient in their dish
+- Users can click on each meal to receive recipes and ingredients
+- Users can add recipes to a liked list generated on the page
 
 ---
 
 ### Usage
 
-Brief description 
+Simply type in the name of whatever ingredient you want to use as the star of your dish, and the app will generate a list of meals for you to explore. Once you find an interesting meal, click on it to find out more information. To save any meals, click the [] to add it to your liked list. 
 
 ---
 
@@ -48,3 +50,4 @@ Here are a few of the resources that I found useful during the creation of this 
 - [w3Schools Tutorials](https://www.w3schools.com/)
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)
 - [Free Photo Usage](https://pixabay.com/)
+- [Free Meal/recipe API](https://www.themealdb.com/api.php)
