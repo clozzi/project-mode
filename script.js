@@ -28,6 +28,7 @@ function displayMeals (mealsArr) {
     recipeLink.textContent = "Find instructions here!"
     recipeLink.target = '_blank'
     mealDiv.append(recipeLink)
+    
     mealDiv.addEventListener('click', displayRecipes)  
     recipeUL.append(mealDiv)
 }
