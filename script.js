@@ -21,18 +21,22 @@ function displayMeals (mealsArr) {
     mealImg.height = 150
     mealDiv.append(mealImg) 
     mealDiv.id = mealID
-    let lineBreak = document.createElement('br')
-    mealDiv.append(lineBreak)
+    mealDiv.innerHTML += "<br>"
     let recipeLink = document.createElement('a')
     recipeLink.href = (`\nhttps://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
     recipeLink.textContent = "Find instructions here!"
     recipeLink.target = '_blank'
     mealDiv.append(recipeLink)
-    
+    let likeBtn = document.createElement('button')
+    likeBtn.textContent = "Like?"
+    mealDiv.innerHTML += "<br>"
+    mealDiv.innerHTML += "<br>"
+    mealDiv.append(likeBtn)
     mealDiv.addEventListener('click', displayRecipes)  
     recipeUL.append(mealDiv)
 }
 
 function displayRecipes() {
     console.log('hi')
+    //fetch using mealID and display recipe instructions and ingredients in dropdown/next to the div (if so change to 3 column layout...might be less visibly offensive to the user)
 }
