@@ -3,12 +3,12 @@ document.getElementById('recipe-search').addEventListener('submit', (e) => {
     fetch (`https://www.themealdb.com/api/json/v1/1/filter.php?i=${mainIngredient}`)
         .then((res) => res.json())
         .then(mealsObj => mealsObj['meals'].forEach(meal => {
-            displayRecipes(meal)
+            displayMeals(meal)
         }));
     e.preventDefault()
 })
 
-function displayRecipes (mealsArr) {
+function displayMeals (mealsArr) {
     const recipeUL = document.getElementById('recipe-results')
     let mealDiv = document.createElement('div')
     let mealName = document.createElement('h3')
@@ -27,6 +27,11 @@ function displayRecipes (mealsArr) {
     recipeLink.href = (`\nhttps://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
     recipeLink.textContent = "Find instructions here!"
     recipeLink.target = '_blank'
-    mealDiv.append(recipeLink)   
+    mealDiv.append(recipeLink)
+    mealDiv.addEventListener('click', displayRecipes)  
     recipeUL.append(mealDiv)
+}
+
+function displayRecipes() {
+    console.log('hi')
 }
