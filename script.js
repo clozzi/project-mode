@@ -60,19 +60,31 @@ function displayMeals (mealsArr) {
     mealDiv.innerHTML += "<br>"
     mealDiv.append(likeBtn)
     mealIdArray.push(mealID)
-    mealDiv.addEventListener('click', explainRecipe)
-    // mealDiv.addEventListener('click', () => {
-    //     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
-    //         .then((res) => res.json())
-    //         .then(recipe => displayRecipes(recipe))
-        //create div with recipe 
-        //append to middle column
-        //hide
-        //explainRecipe
-    //})
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
+        .then((res) => res.json())
+        .then(recipe => {
+            let mealInstr = document.createElement('p')
+            mealInstr.textContent = recipe['meals'][0]['strInstructions']
+            let details = document.getElementById('recipe-details')
+            details.append(mealInstr)
+        })
+    //mealDiv.addEventListener('mouseover', fetchRecipe)
+    //mealDiv.addEventListener('mouseout', hideRecipe)
     recipeUL.append(mealDiv)
 }
 
-function explainRecipe(e) {
-    console.log(e.target.parentNode.id)
+// function fetchRecipe(e) {
+//     let clickedID = e.target.parentNode.id
+//     console.log(clickedID)
+//     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${clickedID}`)
+//         .then((res) => res.json())
+//         .then(recipe => displayRecipe(recipe))
+// }
+
+function displayRecipe() {
+
+}
+
+function hideRecipe() {
+
 }
