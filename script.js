@@ -8,8 +8,10 @@ document.getElementById('recipe-search').addEventListener('submit', (e) => {
     e.preventDefault()
 })
 
+const mealIdArray = []
+const recipeUL = document.getElementById('recipe-results')
+
 function displayMeals (mealsArr) {
-    const recipeUL = document.getElementById('recipe-results')
     let mealDiv = document.createElement('div')
     let mealName = document.createElement('h3')
     mealName.textContent = mealsArr["strMeal"]
@@ -29,14 +31,33 @@ function displayMeals (mealsArr) {
     mealDiv.append(recipeLink)
     let likeBtn = document.createElement('button')
     likeBtn.textContent = "Like?"
+    likeBtn.addEventListener('click', () => {
+        let liked = document.getElementById('liked-recipes')
+        liked.append(mealDiv)
+    })
     mealDiv.innerHTML += "<br>"
     mealDiv.innerHTML += "<br>"
     mealDiv.append(likeBtn)
-    mealDiv.addEventListener('click', displayRecipes)  
+    mealIdArray.push(mealID)
+    // mealDiv.addEventListener('click', () => {
+    //     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
+    //         .then((res) => res.json())
+    //         .then(recipe => displayRecipes(recipe))
+        //create copy of mealDiv
+        //append to middle column
+        //hide
+        //likeRecipe
+    //})
     recipeUL.append(mealDiv)
 }
 
-function displayRecipes() {
-    console.log('hi')
-    //fetch using mealID and display recipe instructions and ingredients in dropdown/next to the div (if so change to 3 column layout...might be less visibly offensive to the user)
+function likeRecipe() {
+    console.log()
 }
+
+// function displayRecipes(recipe) {
+//     console.log(recipe)
+    //show recipe
+
+//     //fetch using mealID and display recipe instructions and ingredients in recipe details ul
+// }
