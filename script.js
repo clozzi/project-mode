@@ -60,25 +60,19 @@ function displayMeals (mealsArr) {
     mealDiv.innerHTML += "<br>"
     mealDiv.append(likeBtn)
     mealIdArray.push(mealID)
+    mealDiv.addEventListener('click', explainRecipe)
     // mealDiv.addEventListener('click', () => {
     //     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
     //         .then((res) => res.json())
     //         .then(recipe => displayRecipes(recipe))
-        //create copy of mealDiv
+        //create div with recipe 
         //append to middle column
         //hide
-        //likeRecipe
+        //explainRecipe
     //})
     recipeUL.append(mealDiv)
 }
 
-function likeRecipe() {
-    console.log()
+function explainRecipe(e) {
+    console.log(e.target.parentNode.id)
 }
-
-// function displayRecipes(recipe) {
-//     console.log(recipe)
-    //show recipe
-
-//     //fetch using mealID and display recipe instructions and ingredients in recipe details ul
-// }
