@@ -5,3 +5,8 @@
 .column {
     flex: 33%;
 }
+
+#sample-recipe {
+    text-align: center;
+}
+
