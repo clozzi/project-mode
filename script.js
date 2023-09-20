@@ -38,22 +38,23 @@ function displayMeals (mealsArr) {
     mealDiv.append(mealName)
     let mealImg = document.createElement('img')
     mealImg.src = mealsArr["strMealThumb"]
-    let mealID = mealsArr['idMeal']
     mealImg.width = 150
     mealImg.height = 150
-    mealDiv.append(mealImg) 
+    mealDiv.append(mealImg)
+    let mealID = mealsArr['idMeal'] 
     mealDiv.id = mealID
     mealDiv.innerHTML += "<br>"
-    let recipeLink = document.createElement('a')
-    recipeLink.href = (`\nhttps://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
-    recipeLink.textContent = "Find instructions here!"
-    recipeLink.target = '_blank'
-    mealDiv.append(recipeLink)
+    // let recipeLink = document.createElement('a')
+    // recipeLink.href = (`\nhttps://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
+    // recipeLink.textContent = "Find instructions here!"
+    // recipeLink.target = '_blank'
+    // mealDiv.append(recipeLink)
     let likeBtn = document.createElement('button')
-    likeBtn.textContent = "Like?"
+    likeBtn.textContent = "Like"
     likeBtn.addEventListener('click', () => {
         let liked = document.getElementById('liked-recipes')
-        liked.append(mealDiv)
+        let clonedMealDiv = mealDiv.cloneNode(true)
+        liked.append(clonedMealDiv)
     })
     mealDiv.innerHTML += "<br>"
     mealDiv.innerHTML += "<br>"
