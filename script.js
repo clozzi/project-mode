@@ -1,3 +1,23 @@
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+        .then((res) => res.json())
+        .then((sampleRecipe) => displaySample(sampleRecipe))
+})
+
+function displaySample(sampRec) {
+    console.log(sampRec["meals"][0]['strMeal'])
+    let sampleName = document.createElement('h3')
+    let sampleImg = document.createElement('img')
+    sampleName.textContent = sampRec['meals'][0]['strMeal']
+    sampleImg.src = sampRec['meals'][0]['strMealThumb']
+    sampleImg.width = 125
+    sampleImg.height = 125
+    let sampleDiv = document.getElementById('sample-recipe')
+    sampleDiv.append(sampleName)
+    sampleDiv.append(sampleImg)
+}
+
+
 document.getElementById('recipe-search').addEventListener('submit', (e) => {
     let mainIngredient = document.getElementById('main-ingredient').value
     fetch (`https://www.themealdb.com/api/json/v1/1/filter.php?i=${mainIngredient}`)
