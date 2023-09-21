@@ -44,17 +44,13 @@ function displayMeals (mealsArr) {
     let mealID = mealsArr['idMeal'] 
     mealDiv.id = mealID
     mealDiv.innerHTML += "<br>"
-    // let recipeLink = document.createElement('a')
-    // recipeLink.href = (`\nhttps://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
-    // recipeLink.textContent = "Find instructions here!"
-    // recipeLink.target = '_blank'
-    // mealDiv.append(recipeLink)
     let likeBtn = document.createElement('button')
     likeBtn.textContent = "Like"
     likeBtn.addEventListener('click', () => {
         let liked = document.getElementById('liked-recipes')
-        let clonedMealDiv = mealDiv.cloneNode(true)
-        liked.append(clonedMealDiv)
+        //let clonedMealDiv = mealDiv.cloneNode(true)
+        //liked.append(clonedMealDiv)
+        liked.append(mealDiv)
     })
     mealDiv.innerHTML += "<br>"
     mealDiv.innerHTML += "<br>"
@@ -74,23 +70,5 @@ function displayMeals (mealsArr) {
                 mealInstr.hidden = true
             })
         })
-    
-    
     recipeUL.append(mealDiv)
-}
-
-// function fetchRecipe(e) {
-//     let clickedID = e.target.parentNode.id
-//     console.log(clickedID)
-//     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${clickedID}`)
-//         .then((res) => res.json())
-//         .then(recipe => displayRecipe(recipe))
-// }
-
-function displayRecipe() {
-
-}
-
-function hideRecipe() {
-
 }
