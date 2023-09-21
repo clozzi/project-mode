@@ -19,6 +19,7 @@ function displaySample(sampRec) {
 
 
 document.getElementById('recipe-search').addEventListener('submit', (e) => {
+    recipeUL.textContent = ""
     let mainIngredient = document.getElementById('main-ingredient').value
     fetch (`https://www.themealdb.com/api/json/v1/1/filter.php?i=${mainIngredient}`)
         .then((res) => res.json())
