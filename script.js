@@ -65,11 +65,17 @@ function displayMeals (mealsArr) {
         .then(recipe => {
             let mealInstr = document.createElement('p')
             mealInstr.textContent = recipe['meals'][0]['strInstructions']
-            let details = document.getElementById('recipe-details')
-            details.append(mealInstr)
+            mealDiv.append(mealInstr)
+            mealInstr.hidden = true
+            mealDiv.addEventListener('mouseover', () => {
+                mealInstr.hidden = false
+            })
+            mealDiv.addEventListener('mouseout', () => {
+                mealInstr.hidden = true
+            })
         })
-    //mealDiv.addEventListener('mouseover', fetchRecipe)
-    //mealDiv.addEventListener('mouseout', hideRecipe)
+    
+    
     recipeUL.append(mealDiv)
 }
 
