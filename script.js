@@ -17,6 +17,7 @@ function displaySample(sampRec) {
 }
 
 const recipeUL = document.getElementById('recipe-results')
+const recipeArr = []
 
 document.getElementById('recipe-search').addEventListener('submit', (e) => {
     recipeUL.textContent = ""
