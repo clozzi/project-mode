@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function displaySample(sampRec) {
-    console.log(sampRec["meals"][0]['strMeal'])
     let sampleName = document.createElement('h3')
     let sampleImg = document.createElement('img')
     sampleName.textContent = sampRec['meals'][0]['strMeal']
@@ -17,6 +16,7 @@ function displaySample(sampRec) {
     sampleDiv.append(sampleImg)
 }
 
+const recipeUL = document.getElementById('recipe-results')
 
 document.getElementById('recipe-search').addEventListener('submit', (e) => {
     recipeUL.textContent = ""
@@ -28,9 +28,6 @@ document.getElementById('recipe-search').addEventListener('submit', (e) => {
         }));
     e.preventDefault()
 })
-
-const mealIdArray = []
-const recipeUL = document.getElementById('recipe-results')
 
 function displayMeals (mealsArr) {
     let mealDiv = document.createElement('div')
@@ -49,14 +46,11 @@ function displayMeals (mealsArr) {
     likeBtn.textContent = "Like"
     likeBtn.addEventListener('click', () => {
         let liked = document.getElementById('liked-recipes')
-        //let clonedMealDiv = mealDiv.cloneNode(true)
-        //liked.append(clonedMealDiv)
         liked.append(mealDiv)
     })
     mealDiv.innerHTML += "<br>"
     mealDiv.innerHTML += "<br>"
     mealDiv.append(likeBtn)
-    mealIdArray.push(mealID)
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
         .then((res) => res.json())
         .then(recipe => {
