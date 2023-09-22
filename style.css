@@ -17,3 +17,15 @@ body {
     text-align: center;
 }
 
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+    font-family: garamond;
+    ;
+}
+
+header {
+    font-family: 'Courier New', Courier, monospace;
+}
