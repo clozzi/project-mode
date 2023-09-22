@@ -65,5 +65,6 @@ function displayMeals (mealsArr) {
                 mealInstr.hidden = true
             })
         })
+    mealDiv.style.border = "groove"
     recipeUL.append(mealDiv)
 }
