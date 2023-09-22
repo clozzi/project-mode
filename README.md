@@ -20,15 +20,15 @@ CSS
 
 ### Overall Functionality
 
-- Allows users to search for a recipe using an item they would like to use as a main ingredient in their dish
-- Users can click on each meal to receive recipes and ingredients
-- Users can add recipes to a liked list generated on the page
+- Allows users to search for a recipe with an item they would like to use as a main ingredient in their dish
+- Users can hover over each meal to receive recipe details
+- Users can add favorite recipes to a liked list generated on the page
 
 ---
 
 ### Usage
 
-Simply type in the name of whatever ingredient you want to use as the star of your dish, and the app will generate a list of meals for you to explore. Once you find an interesting meal, click on it to find out more information. To save any meals, click the [] to add it to your liked list. 
+Simply type in the name of whatever ingredient you want to use as the star of your dish, and the app will generate a list of meals for you to explore. Once you find an interesting meal, hover over it to find out more information. To save any meals, click the "Like" button to add it to your liked list. 
 
 ---
 
