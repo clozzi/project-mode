@@ -32,16 +32,6 @@ Simply type in the name of whatever ingredient you want to use as the star of yo
 
 ---
 
-### Contact
-
-Email: clozzi12@gmail.com
-
-Git: https://github.com/clozzi
-
-LinkedIn: https://www.linkedin.com/in/christopher-lozzi-823777260/
-
----
-
 ### Acknowledgments
 
 Here are a few of the resources that I found useful during the creation of this project, give them a look!
